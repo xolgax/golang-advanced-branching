@@ -81,18 +81,18 @@ func main() {
 	// Generate ratings for the different vehicles
 	generateRating()
 	// Print ratings for the different vehicles
-	//for _, veh := range inventory {
-	//	switch v := veh; v. {
-	//	case car:
-	//		v.carDetails()
-	//	case bike:
-	//		v.bikeDetails()
-	//	case truck:
-	//		v.truckDetails()
-	//	default:
-	//		fmt.Printf("Are you sure this Vehicle Type exists")
-	//	}
-	//}
+	for _, veh := range inventory {
+		switch v := veh; v {
+		case car:
+			v.carDetails()
+		case bike:
+			v.bikeDetails()
+		case truck:
+			v.truckDetails()
+		default:
+			fmt.Printf("Are you sure this Vehicle Type exists")
+		}
+	}
 }
 
 func readJSONFile() Values {
