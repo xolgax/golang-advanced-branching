@@ -2,8 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"go/ast"
-	"io/ioutil"
 	"log"
 	"os"
 )
@@ -90,7 +88,7 @@ func readJSONFile() Values {
 	}
 
 	defer jsonFile.Close()
-    var byteValue []byte
+	var byteValue []byte
 	byteValue, err = os.ReadFile("jsonFile")
 
 	if err != nil {
@@ -103,8 +101,6 @@ func readJSONFile() Values {
 	return content
 }
 
-func generateRating()  {
+func generateRating() {
 
-	f = readJSONFile()
-	for f.Models
 }
