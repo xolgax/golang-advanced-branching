@@ -33,6 +33,9 @@ type feedbackResult struct {
 	feedbackNeutral  int
 }
 
+var vehicleResult map[string]feedbackResult
+var inventory []vehicle
+
 type rating float32
 
 const (
@@ -45,7 +48,7 @@ const (
 
 func init() {
 
-	var inventory []vehicle = []vehicle{
+	inventory = []vehicle{
 		bike{"FTR 1200", "Indian"},
 		bike{"Iron 1200", "Harley"},
 		car{"Sonata", "Hyundai", "Sedan"},
@@ -58,7 +61,7 @@ func init() {
 		truck{"F-150", "Ford", "Truck"},
 		truck{"RAM1500", "Dodge", "Truck"}}
 
-	var vehicleResult map[string]feedbackResult = make(map[string]feedbackResult)
+	vehicleResult = make(map[string]feedbackResult)
 
 }
 
