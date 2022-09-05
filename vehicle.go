@@ -80,11 +80,13 @@ func main() {
 	// Print ratings for the different vehicles
 }
 
+/*
 func readJSONFile() Values {
 	jsonFile, err := os.Open("feedback.json")
 
 	if err != nil {
 		log.Fatal("Error opening feedback.json")
+		log.Fatal("File not found")
 	}
 
 	defer jsonFile.Close()
@@ -95,6 +97,7 @@ func readJSONFile() Values {
 		log.Fatal("Error reading jsonFile")
 	}
 
+	byteValue, _ := ioutil.ReadAll(jsonFile)
 	var content Values
 	json.Unmarshal(byteValue, &content)
 
