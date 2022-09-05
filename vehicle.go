@@ -1,5 +1,13 @@
 package main
 
+import (
+	"encoding/json"
+	"go/ast"
+	"io/ioutil"
+	"log"
+	"os"
+)
+
 type vehicle interface {
 }
 type car struct {
@@ -74,20 +82,29 @@ func main() {
 	// Print ratings for the different vehicles
 }
 
-/*
 func readJSONFile() Values {
 	jsonFile, err := os.Open("feedback.json")
 
 	if err != nil {
-		log.Fatal("File not found")
+		log.Fatal("Error opening feedback.json")
 	}
 
 	defer jsonFile.Close()
+    var byteValue []byte
+	byteValue, err = os.ReadFile("jsonFile")
 
-	byteValue, _ := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		log.Fatal("Error reading jsonFile")
+	}
+
 	var content Values
 	json.Unmarshal(byteValue, &content)
 
 	return content
 }
-*/
+
+func generateRating()  {
+
+	f = readJSONFile()
+	for f.Models
+}
