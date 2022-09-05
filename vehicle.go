@@ -26,7 +26,7 @@ type Model struct {
 	Feedback []string `json:"feedback"`
 }
 
-var feedbackResult struct {
+type feedbackResult struct {
 	feedbackTotal    int
 	feedbackPositive int
 	feedbackNegative int
