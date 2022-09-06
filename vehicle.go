@@ -11,16 +11,19 @@ import (
 
 type vehicle interface {
 }
+
 type car struct {
 	model       string
 	make        string
 	typeVehicle string
 }
+
 type truck struct {
 	model       string
 	make        string
 	typeVehicle string
 }
+
 type bike struct {
 	model string
 	make  string
@@ -80,15 +83,15 @@ func main() {
 
 	// Generate ratings for the different vehicles
 	generateRating()
-	// Print ratings for the different vehicles
 
+	// Print ratings for the different vehicles
 	for _, veh := range inventory {
 		switch v := veh; v {
-		case car:
+		case "car":
 			carDetails()
-		case bike:
+		case "bike":
 			bikeDetails()
-		case truck:
+		case "truck":
 			truckDetails()
 		default:
 			fmt.Printf("Are you sure this Vehicle Type exists")
@@ -161,8 +164,7 @@ func showRating(model string) {
 	}
 }
 
-func carDetails() {
-	c := *car
+func carDetails(c *car) {
 	fmt.Printf("\n%-5v: %-8v: %-12v ", "Car", c.make, c.model)
 	showRating(c.model)
 }
@@ -172,7 +174,7 @@ func bikeDetails(b *bike) {
 	showRating(b.model)
 }
 
-func trucDetails(t *truck) {
+func truckDetails(t *truck) {
 	fmt.Printf("\n%-5v: %-8v: %-12v ", "Truck", t.make, t.model)
 	showRating(t.model)
 }
