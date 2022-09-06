@@ -81,8 +81,9 @@ func main() {
 	// Generate ratings for the different vehicles
 	generateRating()
 	// Print ratings for the different vehicles
+
 	for _, veh := range inventory {
-		switch v := veh; v {
+		switch v := veh.(type); v {
 		case car:
 			v.carDetails()
 		case bike:
@@ -119,7 +120,7 @@ func generateRating() {
 		var vehRating rating
 		for _, msg := range v.Feedback {
 			if text := strings.Split(msg, " "); len(text) >= 5 {
-				vehRating = 5.0
+				vehRating = initial
 				vehResult.feedbackTotal++
 				for _, word := range text {
 					switch s := strings.Trim(strings.ToLower(word), " ,.,!,?,\t,\n,\r"); s {
